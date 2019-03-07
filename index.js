@@ -14,7 +14,11 @@ const classic_elb = new ELB({
 
 // cda-dispe-ElasticL-1N0VM8V2BCD3V - development
 // cda-dispe-ElasticL-1XM2UQU1NXKT6 - production
+// cda-dispe-ElasticL-1TPFRAVFTJUDW - production
 
-const instances = utils.getInstanceNames(classic_elb, 'cda-dispe-ElasticL-1XM2UQU1NXKT6');
+const instances = utils.getInstanceNames(classic_elb, [
+    'cda-dispe-ElasticL-1XM2UQU1NXKT6',
+    'cda-dispe-ElasticL-1TPFRAVFTJUDW'
+]);
 
 instances.then(console.log);
