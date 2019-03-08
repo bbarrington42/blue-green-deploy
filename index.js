@@ -15,20 +15,20 @@ const prod_blue = 'cda-dispe-ElasticL-1TPFRAVFTJUDW';
 const prod_green = 'cda-dispe-ElasticL-1XM2UQU1NXKT6';
 
 
-const prod_info = utils.getInstanceInfo(classic_elb, [
+const instance_info = utils.getInstanceInfo(classic_elb, [
     prod_blue,
-    prod_green
-]);
-
-const dev_info = utils.getInstanceInfo(classic_elb, [
+    prod_green,
     dev
 ]);
 
-const rv = prod_info.then(info => utils.getRegistrationParams(prod_green, info));
-
-rv.then(console.log);
+// const rv = instance_info.then(info => utils.getRegistrationParams(prod_green, info));
+//
+// rv.then(console.log);
 
 // Try to register in dev env
-const reg = utils.registerInstances(classic_elb, dev);
+// const reg = instance_info.then(info => utils.getRegistrationParams(dev, info)).then(params => utils.registerInstances(classic_elb, params));
+//
+// reg.then(console.log).catch(console.error);
 
-reg.then(console.log).catch(console.error);
+// Swap dev with itself
+instance_info.then(info => utils.swapInstances(classic_elb, info, dev, dev)).then(console.log).catch(console.error);
