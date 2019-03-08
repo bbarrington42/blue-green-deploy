@@ -16,10 +16,14 @@ const classic_elb = new ELB({
 // cda-dispe-ElasticL-1TPFRAVFTJUDW - production
 
 const instance_names = utils.getInstanceNames(classic_elb, [
-    'cda-dispe-ElasticL-1XM2UQU1NXKT6',
-    'cda-dispe-ElasticL-1TPFRAVFTJUDW'
+    'cda-dispe-ElasticL-1N0VM8V2BCD3V'
 ]);
 
-const rv = instance_names.then(names => utils.formatRegistrationParams('cda-dispe-ElasticL-1XM2UQU1NXKT6', names));
+const rv = instance_names.then(names => utils.getRegistrationParams('cda-dispe-ElasticL-1N0VM8V2BCD3V', names));
 
 rv.then(console.log);
+
+// Try to deregister in dev env
+// const dereg = utils.deRegisterInstances(classic_elb, 'cda-dispe-ElasticL-1N0VM8V2BCD3V');
+//
+// dereg.then(console.log).catch(console.error);
