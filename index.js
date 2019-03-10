@@ -15,12 +15,6 @@ const prod_blue = 'cda-dispe-ElasticL-1TPFRAVFTJUDW';
 const prod_green = 'cda-dispe-ElasticL-1XM2UQU1NXKT6';
 
 
-const instance_info = utils.getInstanceInfo(classic_elb, [
-    prod_blue,
-    prod_green,
-    dev
-]);
-
 // const rv = instance_info.then(info => utils.getRegistrationParams(prod_green, info));
 //
 // rv.then(console.log);
@@ -30,5 +24,8 @@ const instance_info = utils.getInstanceInfo(classic_elb, [
 //
 // reg.then(console.log).catch(console.error);
 
-// Swap dev with itself
-instance_info.then(info => utils.swapInstances(classic_elb, info, dev, dev)).then(console.log).catch(console.error);
+const dispenser = 'i-08b6c9c1e1a662382';
+const consumer = 'i-0c5fdd7fe746e13ae';
+
+utils.setInstances(classic_elb, dev, [dispenser]).then(console.log);
+
