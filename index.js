@@ -1,18 +1,19 @@
 'use strict';
 
+require('dotenv').config();
 const utils = require('./lib/utils');
 
 const ELB = require('aws-sdk/clients/elb');
 
 const classic_elb = new ELB({
-    accessKeyId: 'AKIAISEOJNARFLW376JQ',
-    secretAccessKey: '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',
-    region: 'us-east-1'
+    accessKeyId: process.env.accessKeyId,
+    secretAccessKey: process.env.secretAccessKey,
+    region: process.env.region
 });
 
-const dev = 'cda-dispe-ElasticL-1N0VM8V2BCD3V';
-const prod_blue = 'cda-dispe-ElasticL-1TPFRAVFTJUDW';
-const prod_green = 'cda-dispe-ElasticL-1XM2UQU1NXKT6';
+const dispenser_dev = 'cda-dispe-ElasticL-1N0VM8V2BCD3V';
+const dispenser_prod_blue = 'cda-dispe-ElasticL-1TPFRAVFTJUDW';
+const dispenser_prod_green = 'cda-dispe-ElasticL-1XM2UQU1NXKT6';
 
 
 // const rv = instance_info.then(info => utils.getRegistrationParams(prod_green, info));
@@ -27,5 +28,7 @@ const prod_green = 'cda-dispe-ElasticL-1XM2UQU1NXKT6';
 const dispenser = 'i-08b6c9c1e1a662382';
 const consumer = 'i-0c5fdd7fe746e13ae';
 
-utils.setInstances(classic_elb, dev, [dispenser]).then(console.log);
+//utils.setInstances(classic_elb, dispenser_dev, [dispenser]).then(console.log);
+
+utils.inventory(classic_elb, [dispenser_prod_blue, dispenser_prod_green]).then(console.log).catch(console.error);
 
