@@ -28,7 +28,7 @@ const dispenser_prod_green = 'cda-dispe-ElasticL-1XM2UQU1NXKT6';
 const dispenser = 'i-08b6c9c1e1a662382';
 const consumer = 'i-0c5fdd7fe746e13ae';
 
-//utils.setInstances(classic_elb, dispenser_dev, [dispenser]).then(console.log);
+utils.setInstances(classic_elb, dispenser_dev, [dispenser]).then(console.log);
 
-utils.inventory(classic_elb, [dispenser_prod_blue, dispenser_prod_green]).then(console.log).catch(console.error);
+//utils.inventory(classic_elb, [dispenser_prod_blue, dispenser_prod_green]).then(console.log).catch(console.error);
 
