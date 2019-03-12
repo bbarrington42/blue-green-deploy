@@ -21,6 +21,6 @@ const consumer = 'i-0c5fdd7fe746e13ae';
 
 //utils.setInstances(classic_elb, dispenser_dev, [dispenser]).then(console.log);
 
-utils.inventory([dispenser_prod_blue, dispenser_prod_green]).then(console.log).catch(console.error);
+//utils.inventory([dispenser_prod_blue, dispenser_prod_green]).then(console.log).catch(console.error);
 
-utils.prodColor().then(console.log).catch(console.error);
+//utils.prodColor().then(console.log).catch(console.error);
