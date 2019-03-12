@@ -24,3 +24,5 @@ const consumer = 'i-0c5fdd7fe746e13ae';
 //utils.inventory([dispenser_prod_blue, dispenser_prod_green]).then(console.log).catch(console.error);
 
 //utils.prodColor().then(console.log).catch(console.error);
+
+utils.listRecords().then(console.log);
