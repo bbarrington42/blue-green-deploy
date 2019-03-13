@@ -26,9 +26,16 @@ const consumer = 'i-0c5fdd7fe746e13ae';
 //utils.prodColor().then(console.log).catch(console.error);
 
 // utils.listRecords().then(console.log);
-// utils.loadBalancers().then(console.log);
+utils.loadBalancers().then(console.log);
 
-const dns = require('dns');
+const dns = require('dns').promises;
+const assert = require('assert');
+const _ = require('underscore');
 
-dns.resolve4('cda-dispe-ElasticL-1XM2UQU1NXKT6-1906510522.us-east-1.elb.amazonaws.com', (err, data) => console.log(`a>${data}`));
-dns.resolve4('dualstack.cda-dispe-elasticl-1xm2uqu1nxkt6-1906510522.us-east-1.elb.amazonaws.com', (err, data) => console.log(`b>${data}`));
+// dns.resolve4('cda-dispe-ElasticL-1XM2UQU1NXKT6-1906510522.us-east-1.elb.amazonaws.com').then(console.log);
+// dns.resolve4('dualstack.cda-dispe-elasticl-1xm2uqu1nxkt6-1906510522.us-east-1.elb.amazonaws.com').then(console.log);
+//
+// const a1 = [1,2];
+// const a2 = [2,1];
+//
+// assert(_.isEqual(_.sortBy(a1, v => v), _.sortBy(a2, v => v)));
