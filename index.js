@@ -25,4 +25,10 @@ const consumer = 'i-0c5fdd7fe746e13ae';
 
 //utils.prodColor().then(console.log).catch(console.error);
 
-utils.listRecords().then(console.log);
+// utils.listRecords().then(console.log);
+// utils.loadBalancers().then(console.log);
+
+const dns = require('dns');
+
+dns.resolve4('cda-dispe-ElasticL-1XM2UQU1NXKT6-1906510522.us-east-1.elb.amazonaws.com', (err, data) => console.log(`a>${data}`));
+dns.resolve4('dualstack.cda-dispe-elasticl-1xm2uqu1nxkt6-1906510522.us-east-1.elb.amazonaws.com', (err, data) => console.log(`b>${data}`));
