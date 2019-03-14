@@ -26,15 +26,13 @@ const consumer = 'i-0c5fdd7fe746e13ae';
 //utils.prodColor().then(console.log).catch(console.error);
 
 // utils.listRecords().then(console.log);
-utils.loadBalancers().then(console.log);
-// const dns = require('dns');
-// const assert = require('assert');
-// const _ = require('underscore');
+//utils.loadBalancers().then(console.log);
+//utils.listRecords().then(console.log);
 
-// dns.resolve4('cda-dispe-ElasticL-1XM2UQU1NXKT6-1906510522.us-east-1.elb.amazonaws.com').then(console.log);
-// dns.resolve4('dualstack.cda-dispe-elasticl-1xm2uqu1nxkt6-1906510522.us-east-1.elb.amazonaws.com').then(console.log);
-//
-// const a1 = [1,2];
-// const a2 = [2,1];
-//
-// assert(_.isEqual(_.sortBy(a1, v => v), _.sortBy(a2, v => v)));
+//utils.describeELBs().then(desc => console.log(JSON.stringify(desc)));
+
+//utils.describeTags([
+//     'cda-consu-ElasticL-BK5LOE3X0J1A',
+//     'cda-dispe-ElasticL-1JO18D9SWAYHG']).then(desc => console.log(JSON.stringify(desc)));
+
+utils.elbsWithTags().then(tags => console.log(JSON.stringify(tags))).catch(console.error);
