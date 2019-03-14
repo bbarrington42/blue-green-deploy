@@ -35,4 +35,5 @@ const consumer = 'i-0c5fdd7fe746e13ae';
 //     'cda-consu-ElasticL-BK5LOE3X0J1A',
 //     'cda-dispe-ElasticL-1JO18D9SWAYHG']).then(desc => console.log(JSON.stringify(desc)));
 
-utils.elbsWithTags().then(tags => console.log(JSON.stringify(tags))).catch(console.error);
+utils.prodColor().then(console.log);
+utils.prodELBs().then(tags => console.log(JSON.stringify(tags))).catch(console.error);
