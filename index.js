@@ -27,10 +27,9 @@ const consumer = 'i-0c5fdd7fe746e13ae';
 
 // utils.listRecords().then(console.log);
 utils.loadBalancers().then(console.log);
-
-const dns = require('dns').promises;
-const assert = require('assert');
-const _ = require('underscore');
+// const dns = require('dns');
+// const assert = require('assert');
+// const _ = require('underscore');
 
 // dns.resolve4('cda-dispe-ElasticL-1XM2UQU1NXKT6-1906510522.us-east-1.elb.amazonaws.com').then(console.log);
 // dns.resolve4('dualstack.cda-dispe-elasticl-1xm2uqu1nxkt6-1906510522.us-east-1.elb.amazonaws.com').then(console.log);
