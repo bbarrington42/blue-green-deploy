@@ -1,9 +1,11 @@
 'use strict';
 
 const utils = require('./lib/utils');
+const _ = require('underscore');
 
-// utils.prodColor().then(console.log);
-//utils.prodELBs().then(tags => console.log(JSON.stringify(tags))).catch(console.error);
+utils.prodELBs().then(tags => console.log(JSON.stringify(tags))).catch(console.error);
 
+const arr1 = [1,2];
+const arr2 = [2,1];
 
-utils.swapInstances().then(v => console.log(JSON.stringify(v))).catch(console.error);
+console.log(_.isEqual(_.sortBy(arr1, v => v), _.sortBy(arr2, v => v)));
